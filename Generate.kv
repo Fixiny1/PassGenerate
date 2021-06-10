@@ -1,0 +1,57 @@
+<LAB@Label>:
+    color: (0, 0, 0, 1)
+
+
+<Content>:
+
+    inputnum:inputnum
+    output:output
+    num:num
+    lower:lower
+    bigger:bigger
+
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1, .3
+            BoxLayout:
+                padding_x: 10, 10
+                size_hint: .95, .8
+                pos_hint: {'center_y':.5}
+                TextInput:
+					size_hint: .99, .99
+                    id: inputnum
+                    text: "10"
+                    focus: True
+                    multiline: False
+                Button:
+                    text: "Generate"
+                    font_size: 20
+                    on_release: root.generate_password()
+        BoxLayout:
+            size_hint: 1, .2
+            CheckBox:
+                id: num
+                size_hint: .2, 1
+                active: True
+                color: (0, 0, 0, 1)
+            LAB:
+                size_hint: .60, 1
+                text: 'Numbers'
+            CheckBox:
+                id: lower
+                size_hint: .06, 1
+                active: True
+                color: (0, 0, 0, 1)
+            LAB:
+                text: 'Lower Caracters'
+            CheckBox:
+                id: bigger
+                size_hint: .06, 1
+                active: True
+                color: (0, 0, 0, 1)
+            LAB:  
+                text: 'Bigger Caracters'
+        TextInput:
+            id: output
+            text: "Enter the number of characters in Input Blank\nExample: 10"
